@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFlix - Content</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #141414;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .movie-poster {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .movie-poster img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: filter 0.3s ease;
+        }
+        .movie-poster:hover img {
+            filter: blur(5px);
+        }
+        .movie-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .movie-poster:hover .movie-info {
+            opacity: 1;
+        }
+        .locked {
+            position: relative;
+            filter: grayscale(100%);
+            pointer-events: none;
+        }
+        .locked::after {
+            content: 'Locked';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .home-icon {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #e50914;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .home-icon:hover {
+            background-color: #b81d24;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Icon -->
+    <a href="index.html" class="home-icon" title="Go to Home">
+        <i class="bi bi-house-fill"></i>
+    </a>
+
+    <div class="container">
+        <h1>Welcome to StreamFlix!</h1>
+        <p>Your subscription is active. Enjoy unlimited content!</p>
+
+        <!-- Basic Section -->
+        <div class="section" id="basic-section">
+            <h2>Basic Content</h2>
+            <div class="movies-grid">
+                <div class="movie-poster">
+                    <img src="images/basic1.jpg" alt="Basic Movie 1">
+                    <div class="movie-info">
+                        <h3>Basic Movie 1</h3>
+                        <p>A thrilling adventure awaits!</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/basic2.jpg" alt="Basic Movie 2">
+                    <div class="movie-info">
+                        <h3>Basic Movie 2</h3>
+                        <p>An emotional journey of love and loss.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/basic3.jpg" alt="Basic Movie 3">
+                    <div class="movie-info">
+                        <h3>Basic Movie 3</h3>
+                        <p>A comedy that will leave you in splits.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/basic4.jpg" alt="Basic Movie 4">
+                    <div class="movie-info">
+                        <h3>Basic Movie 4</h3>
+                        <p>A gripping mystery to solve.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/content1.jpg" alt="Basic Movie 5">
+                    <div class="movie-info">
+                        <h3>Basic Movie 5</h3>
+                        <p>An inspiring story of triumph.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Standard Section -->
+        <div class="section" id="standard-section">
+            <h2>Standard Content</h2>
+            <div class="movies-grid">
+                <div class="movie-poster">
+                    <img src="images/standard1.jpg" alt="Standard Movie 1">
+                    <div class="movie-info">
+                        <h3>Standard Movie 1</h3>
+                        <p>A sci-fi epic like no other.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/standard2.jpg" alt="Standard Movie 2">
+                    <div class="movie-info">
+                        <h3>Standard Movie 2</h3>
+                        <p>A romantic drama to remember.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/standard3.jpg" alt="Standard Movie 3">
+                    <div class="movie-info">
+                        <h3>Standard Movie 3</h3>
+                        <p>An action-packed thriller.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/standard4.jpg" alt="Standard Movie 4">
+                    <div class="movie-info">
+                        <h3>Standard Movie 4</h3>
+                        <p>A fantasy world of wonder.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/standard5.jpg" alt="Standard Movie 5">
+                    <div class="movie-info">
+                        <h3>Standard Movie 5</h3>
+                        <p>A documentary that inspires.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Section -->
+        <div class="section" id="premium-section">
+            <h2>Premium Content</h2>
+            <div class="movies-grid">
+                <div class="movie-poster">
+                    <img src="images/premium1.jpg" alt="Premium Movie 1">
+                    <div class="movie-info">
+                        <h3>Premium Movie 1</h3>
+                        <p>A masterpiece of cinema.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/premium2.jpg" alt="Premium Movie 2">
+                    <div class="movie-info">
+                        <h3>Premium Movie 2</h3>
+                        <p>A gripping tale of survival.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/premium3.jpg" alt="Premium Movie 3">
+                    <div class="movie-info">
+                        <h3>Premium Movie 3</h3>
+                        <p>A journey through time and space.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/premium4.jpg" alt="Premium Movie 4">
+                    <div class="movie-info">
+                        <h3>Premium Movie 4</h3>
+                        <p>A horror story that chills.</p>
+                    </div>
+                </div>
+                <div class="movie-poster">
+                    <img src="images/premium5.jpg" alt="Premium Movie 5">
+                    <div class="movie-info">
+                        <h3>Premium Movie 5</h3>
+                        <p>A musical journey of emotions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate subscription level (Basic, Standard, Premium)
+        const subscriptionLevel = localStorage.getItem('subscription') || 'Basic'; // Replace with actual subscription logic
+
+        // Lock or unlock sections based on subscription level
+        if (subscriptionLevel === 'Basic') {
+            document.getElementById('standard-section').classList.add('locked');
+            document.getElementById('premium-section').classList.add('locked');
+        } else if (subscriptionLevel === 'Standard') {
+            document.getElementById('premium-section').classList.add('locked');
+        }
+    </script>
+</body>
+</html>
